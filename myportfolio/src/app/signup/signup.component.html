@@ -1,0 +1,66 @@
+<h3 style="color: rgba(42, 2, 71, 0.84)" class="text-center">
+  Create Account:
+</h3>
+<br />
+
+<div class="container m-4 d-flex justify-content-center">
+  <form
+    (ngSubmit)="onSubmit(f)"
+    #f="ngForm"
+    class="w-50 border border-fuse border-2 p-4 bg-secondary"
+    style="color: rgb(198, 196, 81)"
+  >
+    <div class="row">
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          name="name"
+          ngModel
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          name="email"
+          ngModel
+          required
+          email
+          #email="ngModel"
+        />
+        <span class="small" *ngIf="!email.valid && email.touched"
+          >Please enter a valid email</span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          name="password"
+          ngModel
+          required
+          password
+          #password="ngModel"
+        />
+        <span class="small" *ngIf="!password.valid && password.touched"
+          >Please give a valid password</span
+        >
+      </div>
+    </div>
+    <button class="btn btn-outline-warning m-2" [disabled]="!f.valid">
+      SignUp
+    </button>
+  </form>
+</div>
