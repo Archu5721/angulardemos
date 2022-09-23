@@ -1,0 +1,87 @@
+<h3 style="color: rgba(42, 2, 71, 0.84)" class="text-center mt-4">
+  Employee Controls
+</h3>
+<br />
+
+<div class="container mt-5 d-flex justify-content-center">
+  <form
+    #f="ngForm"
+    class="w-50 border border-fuse border-2 p-4 bg-secondary"
+    style="color: rgb(198, 196, 81)"
+  >
+    <div class="row mb-2">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          class="form-control"
+          name="first_name"
+          ngModel
+          required
+          fname
+          #fname="ngModel"
+        />
+        <span
+          style="color: red"
+          class="small"
+          *ngIf="!fname.valid && fname.touched"
+          >Please enter a valid Firstname</span
+        >
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          class="form-control"
+          name="last_name"
+          ngModel
+          required
+          lname
+          #lname="ngModel"
+        />
+        <span
+          style="color: red"
+          class="small"
+          *ngIf="!lname.valid && lname.touched"
+          >Please enter a valid Lastname</span
+        >
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          name="email"
+          ngModel
+          required
+          email
+          #email="ngModel"
+        />
+        <span
+          style="color: red"
+          class="small"
+          *ngIf="!email.valid && email.touched"
+          >Please enter a valid email</span
+        >
+      </div>
+    </div>
+
+    <button
+      class="btn btn-outline-warning m-2"
+      [disabled]="!f.valid"
+      (click)="onAddEmployee(f.value, f)"
+    >
+      Add Employee
+    </button>
+    <a class="btn btn-outline-warning" routerLink="/emplist" role="button"
+      >Read Employees</a
+    >
+  </form>
+</div>

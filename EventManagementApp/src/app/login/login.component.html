@@ -1,0 +1,50 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="w-50 border border-fuse border-2 p-4"
+    style="color: rgb(3, 11, 51); background-color: #e9967a"
+  >
+    <h4 class="text-center">Admin Login</h4>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          formControlName="username"
+        />
+        <span
+          class="small"
+          *ngIf="
+            !loginForm.get('username').valid &&
+            loginForm.get('username').touched
+          "
+          >Please enter a valid username</span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="password"
+        />
+        <span
+          class="small"
+          *ngIf="
+            !loginForm.get('email').valid && loginForm.get('email').touched
+          "
+          >Please enter a valid email</span
+        >
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>

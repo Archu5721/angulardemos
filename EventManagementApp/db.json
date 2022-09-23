@@ -17,13 +17,24 @@
       "first_name": "Ann",
       "last_name": "Smith",
       "email": "ann@codingthesmartway.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Daemon",
+      "last_name": "Salvatore",
+      "email": "dsalvatore@codingthesmartway.com"
     }
   ],
-  "posts": [
+  "admin": [
     {
-      "title": "T1",
-      "content": "Hello!!",
-      "id": 1
+      "id": 1,
+      "username": "admin1",
+      "password": "pass1"
+    },
+    {
+      "id": 2,
+      "username": "admin2",
+      "password": "pass2"
     }
   ]
 }

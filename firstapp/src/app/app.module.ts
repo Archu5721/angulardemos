@@ -19,6 +19,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ObservablesComponent } from './observables/observables.component';
 import { TformsComponent } from './tforms/tforms.component';
 import { RformsComponent } from './rforms/rforms.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +33,8 @@ const appRoutes: Routes = [
   { path: 'observables', component: ObservablesComponent },
   { path: 'tforms', component: TformsComponent },
   { path: 'rforms', component: RformsComponent },
+  { path: 'posts', component: PostsComponent },
+
 ];
 
 @NgModule({
@@ -49,10 +54,11 @@ const appRoutes: Routes = [
     HomeComponent,
     ObservablesComponent,
     TformsComponent,
-    RformsComponent
+    RformsComponent,
+    PostsComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot(appRoutes),ReactiveFormsModule],
+    BrowserModule,FormsModule,RouterModule.forRoot(appRoutes),ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
