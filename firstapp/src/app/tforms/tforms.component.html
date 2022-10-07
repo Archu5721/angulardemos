@@ -30,7 +30,7 @@
           email
           #email="ngModel"
         />
-        <span class="small" *ngIf="!email.valid && email.touched"
+        <span id="val_error" class="small" *ngIf="!email.valid && email.touched"
           >Please enter a valid email</span
         >
       </div>
@@ -67,7 +67,9 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary m-2" [disabled]="!f.valid">Submit</button>
+    <button id="forms" class="btn btn-primary m-2" [disabled]="!f.valid">
+      Submit
+    </button>
   </form>
   <div class="row" *ngIf="submitted">
     <div class="col">
